@@ -4,7 +4,7 @@ import InputForm from "./InputForm";
 import ResultCard from "./ResultCard";
 import ErrorCard from "./ErrorCard";
 
-const API_URL = "localhost:8080";
+const API_URL = "http://localhost:8080";
 
 class Main extends React.Component {
   constructor(props) {
@@ -22,16 +22,18 @@ class Main extends React.Component {
   };
 
   handleSubmit = () => {
-    const request = {
+    const request = JSON.stringify({
       original_url: this.state.originalUrl,
-    };
+    });
 
     axios
-      .post(API_URL, request)
-      .then((response) =>
+      .post(API_URL + "/v1/url/create", request)
+      .then((response) =>{
         this.setState({
-          shortUrl: response.data.id,
-        })
+          shortUrl: response.data.result.short_url,
+          responseCode: response.status,
+        });
+      }
       )
       .catch((error) => {
         this.setState({
@@ -48,7 +50,7 @@ class Main extends React.Component {
     let card =
       shortUrl !== "" ? <ResultCard shortUrl={API_URL + "/" + shortUrl} /> : "";
 
-    if(responseCode !== 201){
+    if(responseCode === 404){
       card = <ErrorCard/>
     }
 
