@@ -26,7 +26,7 @@ Already Deploy to [this link](https://sonos-app.netlify.app)
 npm run dev
 ```
 
-or
+or for the production environment
 
 ```bash
 docker-compose up -d

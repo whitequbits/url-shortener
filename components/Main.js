@@ -4,7 +4,7 @@ import InputForm from "./InputForm";
 import ResultCard from "./ResultCard";
 import ErrorCard from "./ErrorCard";
 
-const API_URL = "http://localhost:8080";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 class Main extends React.Component {
   constructor(props) {
