@@ -17,8 +17,16 @@ class Main extends React.Component {
     };
   }
 
+  checkRegex = (string) => {
+    let re = new RegExp("^(http|https)://", "i");
+    return re.test(string);
+  }
+
   handleChange = (event) => {
-    this.setState({ originalUrl: event.target.value });
+    let value = event.target.value;
+    let originalUrl = this.checkRegex(value) ? value : "https://" + value;
+    
+    this.setState({ originalUrl: originalUrl });
   };
 
   handleSubmit = () => {
@@ -59,6 +67,7 @@ class Main extends React.Component {
         <InputForm
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          inputValue={this.state.originalUrl}
         />
         {card}
       </div>

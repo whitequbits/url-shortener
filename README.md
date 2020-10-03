@@ -42,13 +42,13 @@ http://0.0.0.0:3000
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/rainoverme002/sonos-project) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/whitequbits/url-shortener) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-[rainoverme002](https://github.com/rainoverme002)
+[whitequbits](https://github.com/whitequbits)
 
-See also the list of [contributors](https://github.com/rainoverme002/sonos-project) who participated in this project.
+See also the list of [contributors](https://github.com/whitequbits/url-shortener) who participated in this project.
 
 ## License
 
