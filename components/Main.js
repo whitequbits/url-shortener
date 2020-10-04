@@ -56,7 +56,7 @@ class Main extends React.Component {
     const responseCode = this.state.responseCode;
 
     let card =
-      shortUrl !== "" ? <ResultCard shortUrl={API_URL + "/" + shortUrl} /> : "";
+      shortUrl !== "" ? <ResultCard shortUrl={API_URL + "/tiny/" + shortUrl} /> : "";
 
     if(responseCode === 404){
       card = <ErrorCard/>
